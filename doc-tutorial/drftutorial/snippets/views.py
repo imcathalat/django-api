@@ -27,14 +27,15 @@ from rest_framework import renderers
 
 from django.http import Http404
 
-@api_view(['GET'])
-def api_root(request, format=None):
-    return Response(
-        {
-            'users': reverse('user-list', request=request, format=format),
-            'snippets': reverse('snippet-list', request=request, format=format)
-        }
-    )
+# this isn't necessary, because the DefaultRouter() creates it automatically
+# @api_view(['GET'])
+# def api_root(request, format=None):
+#     return Response(
+#         {
+#             'users': reverse('user-list', request=request, format=format),
+#             'snippets': reverse('snippet-list', request=request, format=format)
+#         }
+#     )
 
 # VIEWSETS
 
